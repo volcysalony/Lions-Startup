@@ -1,4 +1,4 @@
-import estudantes from "../bancoDeDados/estudantes.js";
+import estudantes from "../dados/estudantes.js";
 
 let proximoId = 1;
 
