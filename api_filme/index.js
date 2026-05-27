@@ -90,6 +90,10 @@ app.get("/filmes/busca", (req, res) => {
   res.status(200).send(resultados);
 });
 
+app.get("/", (req, res) => {
+  res.send("API de filmes funcionando!");
+});
+
 // Iniciando o servidor
 app.listen(porta, () => {
   console.log(`Servidor de Filmes rodando em http://localhost:${porta}`);
