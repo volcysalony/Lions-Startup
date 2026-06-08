@@ -1,0 +1,15 @@
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+async function conectarBanco() {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("MongoDB conectado!");
+  } catch (error) {
+    console.error("Erro ao conectar ao MongoDB:", error.message);
+  }
+}
+
+export default conectarBanco;
