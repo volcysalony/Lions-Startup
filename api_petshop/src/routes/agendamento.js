@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import express from "express";
 import Agendamento from "../models/agendamento.js";
 
@@ -60,7 +61,10 @@ router.post("/agendamentos", async (req, res) => {
 // READ
 router.get("/agendamentos", async (req, res) => {
   try {
+    console.log("Estado Mongo na rota:", mongoose.connection.readyState);
+
     const agendamentos = await Agendamento.find();
+
     return res.status(200).json(agendamentos);
   } catch (error) {
     return res.status(500).json({

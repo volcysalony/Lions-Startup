@@ -1,5 +1,5 @@
 import express from "express";
-import dotenv from "dotenv";
+import dotenv from "dotenv"
 import conectarBanco from "./db.js";
 import agendamentoRoutes from "./routes/agendamento.js";
 
@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-conectarBanco();
+await conectarBanco();
 
 app.get("/", (req, res) => {
   res.status(200).json({
@@ -22,4 +22,4 @@ app.use(agendamentoRoutes);
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
-});
+}); 
